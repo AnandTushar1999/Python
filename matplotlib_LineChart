@@ -1,0 +1,13 @@
+plt.plot(months, sales)
+plt.xticks(rotation =90)
+plt.title('Sales in 2022\n', fontdict= {'fontsize':20, 'fontweight':100, 'color': 'Green'})
+sale = np.arange(0, 600000, 50000)
+month = ['{}K'.format(i//1000) for i in sale]
+plt.yticks(sale, month)
+plt.xlabel('Months', fontdict={'fontsize':20, 'fontweight': 100, 'color': 'red'})
+plt.ylabel('Sales', fontdict={'fontsize':20, 'fontweight': 100, 'color': 'red'})
+
+for xy in zip(months, sales):
+    plt.annotate("{}K".format(xy[1]//1000), xy = xy,  textcoords='data')
+    
+plt.show()
